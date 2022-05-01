@@ -1,7 +1,9 @@
 import React from "react" 
 
 export default function Person(props) {
-
+  
+  const buttonRef = React.useRef(null)
+  React.useEffect(() => buttonRef.current.click(), [])
 
     return (
         <div className="grid-item person">
@@ -13,7 +15,7 @@ export default function Person(props) {
             </div>
           </div>
           <div className="bottom">  
-            <button id="daily" onClick={props.renderDaily}>Daily</button> 
+            <button id="daily" ref={buttonRef} onClick={props.renderDaily}>Daily</button> 
             <button id="weekly" onClick={props.renderWeekly}>Weekly</button>
             <button id="monthly" onClick={props.renderMonthly}>Monthly</button>
           </div>

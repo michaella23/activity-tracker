@@ -7,18 +7,16 @@ function App() {
 
 const [timeFrame, setTimeFrame] = React.useState([]) 
 
+
 let array = []
 
 function setDaily() {
   //document.getElementById("activity-previous").textContent = "Yesterday - "
   data.forEach((activity) => {
-    let activityTitle = activity.title
-    let activityDaily = activity.timeframes.daily
-    let activityImage = activity.image
     let activityObj = {
-      title: activityTitle,
-      timeframe: activityDaily,
-      image: activityImage
+      title: activity.title,
+      timeframe: activity.timeframes.daily,
+      image: activity.image
     }
     array.push(activityObj)
   })
@@ -28,13 +26,10 @@ function setDaily() {
 function setWeekly() {
   //document.getElementById("activity-previous").textContent += "Last week - "
   data.forEach((activity) => {
-    let activityTitle = activity.title
-    let activityWeekly = activity.timeframes.weekly
-    let activityImage = activity.image
     let activityObj = {
-      title: activityTitle,
-      timeframe: activityWeekly,
-      image: activityImage
+      title: activity.title,
+      timeframe: activity.timeframes.weekly,
+      image: activity.image
     }
     array.push(activityObj)
   })
@@ -60,7 +55,6 @@ function setMonthly() {
           renderDaily={setDaily}
           renderWeekly={setWeekly}
           renderMonthly={setMonthly}
-          // 2 other properties set to my other functions, pass those to person buttons
         />
         <Activity 
           timeSpent={timeFrame}
