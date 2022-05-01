@@ -3,11 +3,6 @@ import React from "react"
 export default function Person(props) {
 
 
-function handleClick() {
-  props.setTimeFrame()
-}
-
-
     return (
         <div className="grid-item person">
           <div className="jeremy">
@@ -18,12 +13,10 @@ function handleClick() {
             </div>
           </div>
           <div className="bottom">  
-            <button id="daily" onclick={() => props.timeView()}>Daily</button> 
-            <button id="weekly" onclick={handleClick}>Weekly</button>
-            <button id="monthly" onclick={handleClick}>Monthly</button>
+            <button id="daily" onClick={props.renderDaily}>Daily</button> 
+            <button id="weekly" onClick={props.renderWeekly}>Weekly</button>
+            <button id="monthly" onClick={props.renderMonthly}>Monthly</button>
           </div>
       </div>
     )
 }
-
-// going to need to use state for the buttons...
