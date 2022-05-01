@@ -1,6 +1,13 @@
 import React from "react" 
 
-export default function Person() {
+export default function Person(props) {
+
+
+function handleClick() {
+  props.setTimeFrame()
+}
+
+
     return (
         <div className="grid-item person">
           <div className="jeremy">
@@ -11,9 +18,9 @@ export default function Person() {
             </div>
           </div>
           <div className="bottom">  
-            <button id="daily">Daily</button> 
-            <button id="weekly">Weekly</button>
-            <button id="monthly">Monthly</button>
+            <button id="daily" onclick={() => props.timeView()}>Daily</button> 
+            <button id="weekly" onclick={handleClick}>Weekly</button>
+            <button id="monthly" onclick={handleClick}>Monthly</button>
           </div>
       </div>
     )
