@@ -10,14 +10,14 @@ export default function Person(props) {
           <div className="jeremy">
             <img className="headshot" src='./images/image-jeremy.png' alt="Jeremy headshot" />
             <div>
-              <p>Report for</p>
+              <p>report for</p>
               <h1>Jeremy <span className="last">Robson</span></h1>
             </div>
           </div>
           <div className="bottom">  
-            <button id="daily" ref={buttonRef} onClick={props.renderDaily}>Daily</button> 
-            <button id="weekly" onClick={props.renderWeekly}>Weekly</button>
-            <button id="monthly" onClick={props.renderMonthly}>Monthly</button>
+            <button value="daily" ref={buttonRef} onClick={props.renderValues}>daily</button> 
+            <button value="weekly" onClick={props.renderValues}>weekly</button>
+            <button value="monthly" onClick={props.renderValues}>monthly</button>
           </div>
       </div>
     )

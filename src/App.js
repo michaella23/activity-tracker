@@ -7,57 +7,30 @@ function App() {
 
 const [timeFrame, setTimeFrame] = React.useState([]) 
 
+let activitiesArray = []
 
-let array = []
-
-function setDaily() {
-  //document.getElementById("activity-previous").textContent = "Yesterday - "
-  data.forEach((activity) => {
+function setValues(event) {
+  data.forEach(({title, image, timeframes}) => {
     let activityObj = {
-      title: activity.title,
-      timeframe: activity.timeframes.daily,
-      image: activity.image
-    }
-    array.push(activityObj)
-  })
-  setTimeFrame(array)
-}
+      title: title,
+      timeframe: event.target.value === "daily" ? timeframes.daily :
+                 event.target.value === "weekly" ? timeframes.weekly :
+                                                  timeframes.monthly,                   
 
-function setWeekly() {
-  //document.getElementById("activity-previous").textContent += "Last week - "
-  data.forEach((activity) => {
-    let activityObj = {
-      title: activity.title,
-      timeframe: activity.timeframes.weekly,
-      image: activity.image
+      image: image
     }
-    array.push(activityObj)
+    activitiesArray.push(activityObj)
   })
-  setTimeFrame(array)
-}
-
-function setMonthly() {
-  //document.getElementById("activity-previous").textContent = "Last month - "
-  data.forEach((activity) => {
-    let activityObj = {
-      title: activity.title,
-      timeframe: activity.timeframes.monthly,
-      image: activity.image
-    }
-    array.push(activityObj)
-  })
-  setTimeFrame(array)
+  setTimeFrame(activitiesArray)
 }
 
   return (
       <main className='grid'>
         <Person
-          renderDaily={setDaily}
-          renderWeekly={setWeekly}
-          renderMonthly={setMonthly}
+          renderValues={setValues}
         />
         <Activity 
-          timeSpent={timeFrame}
+          timeSpent={timeFrame} /* current state */
         />
       </main>
   );
@@ -67,22 +40,51 @@ export default App;
 
 
 
+/* function setDaily() {
+  data.forEach(({title, image, timeframes}) => {
+    let activityObj = {
+      title: title,
+      timeframe: timeframes.daily,
+      image: image
+    }
+    activitiesArray.push(activityObj)
+  })
+  setTimeFrame(activitiesArray)
+}
+
+function setWeekly() {
+  data.forEach(({title, image, timeframes}) => {
+    let activityObj = {
+      title: title,
+      timeframe: timeframes.weekly,
+      image: image
+    }
+    activitiesArray.push(activityObj)
+  })
+  setTimeFrame(activitiesArray)
+}
+
+function setMonthly() {
+  data.forEach(({title, image, timeframes}) => {
+    let activityObj = {
+      title: title,
+      timeframe: timeframes.monthly,
+      image: image
+    }
+    activitiesArray.push(activityObj)
+  })
+  setTimeFrame(activitiesArray)
+} */
+
+/*
+          renderDaily={setDaily}
+          renderWeekly={setWeekly}
+          renderMonthly={setMonthly}
+*/
 
 
 
 // timeframes an object with 3 other objects
-// this returns daily, weekly, monthly for first object 'Work'
-// need to loop over data, conditionally render daily, weekly, or monthly with button click
-// need to give person the appropriate properties and pass down as props to components
+// this returns daily, weekly, monthly for first object 'Work'// need to loop over data, conditionally render daily, weekly, or monthly with button click
 // properties... maybe something will be equal to timeFrame, which will be toggled
-/*function timeView() {
-  //let activityTime = document.getElementById("activity-time")
-  //let activityPrevious = document.getElementById("activity-previous")
-  setTimeFrame(timeFrame.map((prevTimeFrame) => {
-    return prevTimeFrame.timesframes.weekly.current
-    
-      //.current,
-      //prevTimeFrame.timesframes.weekly.previous
-     // need to return current and previous  and use a conditional for daily, weekly, monthly
-  }))
-}*/
+// need to return current and previous  and use a conditional for daily, weekly, monthly
