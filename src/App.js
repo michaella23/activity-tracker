@@ -10,9 +10,11 @@ const [timeFrame, setTimeFrame] = React.useState([])
 let activitiesArray = []
 
 function setValues(event) {
-  data.forEach(({title, image, timeframes}) => {
+  data.forEach(({title, image, timeframes}) => { // destructured 'activity' object
+    // since it's destructured, I don't have the repetition of activity.title, activity.image, etc. in the code below
     let activityObj = {
       title: title,
+      // here I use the event target (I gave each of the buttons a value) to conditionally render the data
       timeframe: event.target.value === "daily" ? timeframes.daily :
                  event.target.value === "weekly" ? timeframes.weekly :
                                                   timeframes.monthly,                   
@@ -27,7 +29,7 @@ function setValues(event) {
   return (
       <main className='grid'>
         <Person
-          renderValues={setValues}
+          renderValues={setValues} /* I have just one function now! pass it to all three buttons with props */
         />
         <Activity 
           timeSpent={timeFrame} /* current state */

@@ -3,11 +3,11 @@ import React from "react"
 export default function Activity(props) {
 
     // need conditional rendering from daily, weekly, monthly, that can plug into the object notation
-    const activityGrid = props.timeSpent.map(({title, image, timeframe}) => {
-
+    const activityGrid = props.timeSpent.map(({title, image, timeframe}) => { // destructured 'activity' object
+                                                // since it's destructured, I don't have the repetition of activity.title, activity.image, etc. in the code below
         return (
             <div className="grid-item">
-                <div className={title}>
+                <div className={title}> 
                     <img src={image} alt="activity icon"/>
                 </div>
                 <div className="card">
