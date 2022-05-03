@@ -1,11 +1,11 @@
 {
-  "main.js": "/michaella23/activity-tracker/static/js/main.bd394bfa.chunk.js",
-  "main.js.map": "/michaella23/activity-tracker/static/js/main.bd394bfa.chunk.js.map",
-  "static/js/1.444d70a7.chunk.js": "/michaella23/activity-tracker/static/js/1.444d70a7.chunk.js",
-  "static/js/1.444d70a7.chunk.js.map": "/michaella23/activity-tracker/static/js/1.444d70a7.chunk.js.map",
-  "runtime~main.js": "/michaella23/activity-tracker/static/js/runtime~main.58f583fd.js",
-  "runtime~main.js.map": "/michaella23/activity-tracker/static/js/runtime~main.58f583fd.js.map",
-  "index.html": "/michaella23/activity-tracker/index.html",
-  "precache-manifest.e1cd51c86e642c52c48220440c0b733d.js": "/michaella23/activity-tracker/precache-manifest.e1cd51c86e642c52c48220440c0b733d.js",
-  "service-worker.js": "/michaella23/activity-tracker/service-worker.js"
+  "main.js": "/activity-tracker/static/js/main.bd394bfa.chunk.js",
+  "main.js.map": "/activity-tracker/static/js/main.bd394bfa.chunk.js.map",
+  "static/js/1.444d70a7.chunk.js": "/activity-tracker/static/js/1.444d70a7.chunk.js",
+  "static/js/1.444d70a7.chunk.js.map": "/activity-tracker/static/js/1.444d70a7.chunk.js.map",
+  "runtime~main.js": "/activity-tracker/static/js/runtime~main.1e5db629.js",
+  "runtime~main.js.map": "/activity-tracker/static/js/runtime~main.1e5db629.js.map",
+  "index.html": "/activity-tracker/index.html",
+  "precache-manifest.a039f1f51dfd205978dcb4df8dc1e0ac.js": "/activity-tracker/precache-manifest.a039f1f51dfd205978dcb4df8dc1e0ac.js",
+  "service-worker.js": "/activity-tracker/service-worker.js"
 }

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/michaella23/activity-tracker/precache-manifest.e1cd51c86e642c52c48220440c0b733d.js"
+  "/activity-tracker/precache-manifest.a039f1f51dfd205978dcb4df8dc1e0ac.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/michaella23/activity-tracker/index.html", {
+workbox.routing.registerNavigationRoute("/activity-tracker/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
