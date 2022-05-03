@@ -9,6 +9,23 @@ const [timeFrame, setTimeFrame] = React.useState([])
 
 let activitiesArray = []
 
+function setDaily() {
+  data.forEach(({title, image, timeframes}) => {
+    let activityObj = {
+      title: title,
+      timeframe: timeframes.daily,
+      image: image
+    }
+    activitiesArray.push(activityObj)
+  })
+  setTimeFrame(activitiesArray)
+}
+
+// rendering Daily view on load
+React.useEffect(() => setDaily, [])
+
+
+// this function allows display of dynamic values based on the event target button value
 function setValues(event) {
   data.forEach(({title, image, timeframes}) => { // destructured 'activity' object
     // since it's destructured, I don't have the repetition of activity.title, activity.image, etc. in the code below
@@ -29,7 +46,7 @@ function setValues(event) {
   return (
       <main className='grid'>
         <Person
-          renderValues={setValues} /* I have just one function now! pass it to all three buttons with props */
+          renderValues={setValues}
         />
         <Activity 
           timeSpent={timeFrame} /* current state */
@@ -42,7 +59,9 @@ export default App;
 
 
 
-/* function setDaily() {
+/* 
+
+function setDaily() {
   data.forEach(({title, image, timeframes}) => {
     let activityObj = {
       title: title,
@@ -76,12 +95,32 @@ function setMonthly() {
     activitiesArray.push(activityObj)
   })
   setTimeFrame(activitiesArray)
-} */
+}
+
+
+function setValues(event) {
+  data.forEach(({title, image, timeframes}) => { // destructured 'activity' object
+    // since it's destructured, I don't have the repetition of activity.title, activity.image, etc. in the code below
+    let activityObj = {
+      title: title,
+      // here I use the event target (I gave each of the buttons a value) to conditionally render the data
+      timeframe: event.target.value === "daily" ? timeframes.daily :
+                 event.target.value === "weekly" ? timeframes.weekly :
+                                                  timeframes.monthly,                   
+
+      image: image
+    }
+    activitiesArray.push(activityObj)
+  })
+  setTimeFrame(activitiesArray)
+}
+
+ */
 
 /*
-          renderDaily={setDaily}
-          renderWeekly={setWeekly}
-          renderMonthly={setMonthly}
+            renderDaily={setDaily}
+            renderWeekly={setWeekly}
+            renderMonthly={setMonthly}
 */
 
 
